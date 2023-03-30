@@ -1,12 +1,13 @@
 import { Box, styled } from '@mui/material'
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-
 import Sidebar from '../section/user/Sidebar';
-
+import { MobileDevice } from '../config/Constants.config';
+ 
 const MainContainer = styled("main", {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
+  flexGrow:1,
   minHeight: `calc(100vh - 90px)`,
   // marginLeft: "10px",
   marginTop: theme.spacing(8),
@@ -17,23 +18,22 @@ const MainContainer = styled("main", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-
-    width: `calc(100% - 65px)`
+    width:`calc(100% - 65px)`
   }),
 
-  ...(open && {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
+  // ...(open && {
+  //   transition: theme.transitions.create("margin", {
+  //     easing: theme.transitions.easing.easeOut,
+  //     duration: theme.transitions.duration.enteringScreen,
+  //   }),
+  // }),
 }));
 
 
 function Homelayout() {
   return (
     <>
-      <Box display='flex' width='100%'>
+      <Box  display='flex' width='100%' >
         <Sidebar />
         <MainContainer>
           <Outlet />

@@ -7,10 +7,7 @@ function Holidays() {
     return (
         <>
             <Grid container paddingTop='20px'>
-                <Grid item xs={12}>
-                    <Typography sx={{ marginX: "20px"}}>
-                        Holidays
-                    </Typography>
+                <Grid item xs={12}>        
                 </Grid>
                 <Grid item xs={12}>
                     <Holidayreport/>

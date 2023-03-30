@@ -1,7 +1,6 @@
 import { Box, Card, CardContent, Grid, Stack, styled, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '../core/Button'
-import UserContext from '../hooks/UserContext'
 import TotalActivity from './TotalActivity'
 
 const style = {
@@ -29,10 +28,11 @@ const Boxstyle = styled(Box)(({ theme }) => ({
 
 
 function Tracktimesection() {
-
+  
     return (
         <>
-            <Grid container spacing={4} padding={3}>
+          
+              <Grid container spacing={4} padding={3}>
                 <Grid item xs={12} md={6} >
                     <Card>
                         <CardContent>
@@ -51,6 +51,7 @@ function Tracktimesection() {
                                 <Box sx={circlestyle} >
                                     <Typography sx={{fontWeight:600}}>
                                         3.45 hrs
+                                
                                     </Typography>
                                 </Box>
                                 <Button>
@@ -84,8 +85,8 @@ function Tracktimesection() {
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Grid container spacing={4}>
-                        <Grid item xs={6} md={12}>
+                    <Grid container spacing={4} >
+                        <Grid item xs={12} md={12}>
                             <Card>
                                 <CardContent>
                                     <Typography variant='body1'>
@@ -105,7 +106,7 @@ function Tracktimesection() {
                                 </CardContent>
                             </Card>
                         </Grid>
-                        <Grid item xs={6} md={12} >
+                        <Grid item xs={12} md={12} >
                             <Card sx={{ height: "295px" }}>
                                 <CardContent>
                                    <TotalActivity/>

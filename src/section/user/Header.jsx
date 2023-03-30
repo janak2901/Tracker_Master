@@ -25,7 +25,7 @@ function Header() {
   }
   return (
     <>
-      <Stack direction='row' alignItems='center' justifyContent='space-between' width='100%'>
+      <Stack direction='row' alignItems='center' justifyContent='space-between' width='100%' minHeight='64px'>
         <Typography variant="h6" noWrap component="div" paddingLeft={1} color='primary' sx={{cursor:'pointer'}}>
           {JSON.parse(username)}
           
@@ -56,7 +56,7 @@ function Header() {
                 <Divider />
                 <Stack>
                   <Stack direction='row' paddingTop={2} alignItems='center'>
-                    <Box paddingRight={2.5}>
+                    <Box width='55px'>
                       <Person sx={{ fontSize: '30px' }} />
                     </Box>
                     <Typography fontSize='15px'>
@@ -64,8 +64,8 @@ function Header() {
                     </Typography>
                   </Stack>
                   <Stack>
-                    <Stack direction='row'>
-                      <Box paddingRight={3}>
+                    <Stack direction='row' alignItems='center'>
+                      <Box width='55px'>
                         <Lock sx={{ fontSize: "25px" }} />
                       </Box>
                       <Typography fontSize='15px' sx={{ cursor: 'pointer' }} onClick={() => handleLogOut()}>

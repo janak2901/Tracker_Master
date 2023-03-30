@@ -37,6 +37,13 @@ const sideBardata=[{
     submenu:false,
     path:"/holidaylist"
 
+},
+{
+    icon:<Chair/>,
+    iconname:"User_Holidays",
+    submenu:false,
+    path:"/userholidaylist"
+
 },{
     icon:<DomainVerification/>,
     iconname:"Leave",

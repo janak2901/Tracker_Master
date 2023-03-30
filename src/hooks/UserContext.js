@@ -10,7 +10,6 @@ export const UserProvider = ({ children }) => {
 	// debugger
 	const [currentUser, setCurrentUser] = useState(null);
 	const nav = useNavigate();
-
 	// useEffect(() => {
 	// debugger
 	const login = async (

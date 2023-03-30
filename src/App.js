@@ -16,35 +16,34 @@ import Dashboard from './page/Dashboard';
 import Homelayout from './layout/Homelayout';
 import ProtectedRoute from './route/protectedRoute';
 import User from './page/User';
+import UserHoliday from './page/UserHoliday';
+import MobileDrawer from './section/user/MobileDrawer';
+import WorktimeReport from './page/WorktimeReport';
 
 
 
 function App() {
   return (
     <>
-      {/* <Loginpage/> */}
-      {/*  <Homepage/>   */}
-      {/* <Leaveform/> */}
+     
       <UserProvider>
         <Routes>
           <Route path='/' element={<Loginpage />} />
 
           <Route element={<Homelayout />}>
             <Route path='/dashboard' element={<PrivateRoute Component={Dashboard} />} />
-            <Route path='/worktimereport' element={<PrivateRoute Component={WorktimeGrid} />} />
+            <Route path='/worktimereport' element={<PrivateRoute Component={WorktimeReport} />} />
             <Route path='/holidaylist' element={<PrivateRoute Component={Holidays} />} />
+            <Route path='/userholidaylist' element={<PrivateRoute Component = {UserHoliday}/>}/>
             <Route path='/leavepage' element={<PrivateRoute Component={Leavepage} />} />
             <Route path='/summarypage' element={<PrivateRoute Component={Summary} />} />
             <Route path='/user' element={<PrivateRoute Component={User} />} />
-         
           </Route>
-
           <Route path="*" component={() => "404 Page Not Found"} />
-          
         </Routes>
       </UserProvider>
 
-
+   
     </>
   );
 }

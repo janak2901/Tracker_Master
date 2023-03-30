@@ -1,4 +1,4 @@
-import { Card, Drawer, Fab, IconButton, Stack, Tooltip, Typography } from '@mui/material'
+import { Card, Drawer, Fab, IconButton, Stack, Tooltip } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import React, { useEffect, useState } from 'react'
 import { deleteUser, fetchUsers } from '../redux/action';
@@ -9,6 +9,7 @@ import { Add } from '@mui/icons-material';
 import Userform from './user/userform';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Typography from '../core/Typography';
 
 
 function User_report() {
@@ -71,7 +72,7 @@ function User_report() {
       renderCell: ({ row }) => (
         <>
           <Tooltip title="Edit">
-            <IconButton onClick={() => handleEvent(row)} >
+            <IconButton onClick={() => handleEditEvent(row)} >
               <EditIcon fontSize="small" sx={{ mr: 0, color: 'blue' }} >
               </EditIcon>
             </IconButton>
@@ -90,9 +91,8 @@ function User_report() {
   const [openForm, setOpenForm] = useState(false);
   const [user, setUser] = useState({});
 
-  const leaveformpage = () => {
+  const Userformpage = () => {
     setOpenForm(prev => !prev)
-
   }
 
   const dispatch = useDispatch();
@@ -115,11 +115,11 @@ function User_report() {
     dispatch(deleteUser(id));
   }
 
-  const handleEvent = (id) => {
+  const handleEditEvent = (id) => {
     console.log("row====", id);
     setUser({ id });
     console.log("user====", user);
-    leaveformpage();
+    Userformpage();
   }
   return (
     <>
@@ -129,11 +129,11 @@ function User_report() {
           <Typography>
             User
           </Typography>
-          <Fab style={{ position: "absulate", zIndex: 'auto' }} color='primary' aria-label='add' size='small' onClick={leaveformpage}>
+          <Fab style={{ position: "absulate", zIndex: 'auto' }} color='primary' aria-label='add' size='small' onClick={Userformpage}>
             <Add />
           </Fab>
         </Stack>
-        <Drawer anchor='right' open={openForm} onClose={leaveformpage} sx={{ position: "relative", zIndex: '9999', width: "100vw" }}>
+        <Drawer anchor='right' openForm={openForm}  open={openForm} onClose={Userformpage} sx={{ position: "relative", zIndex: '9999', width: "100vw" }}>
           <Userform user={user} />
         </Drawer>
       </Stack>

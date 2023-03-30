@@ -1,8 +1,8 @@
 import { GET, GET_HOLIDAY, GET_LEAVE } from "./type";
-import { api } from "../baseurl";
+import { api } from '../baseurl'
 // import toast from "react-hot-toast";
 
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const token = localStorage.getItem('user');
@@ -19,22 +19,16 @@ export const fetchUsers = () => {
         try {
             const res = await api.get('user', config)
             const user = res.data.data;
-            console.log("uuuuuuuuuu", user);
-            console.log("status.......", res.status);
-
             dispatch({
                 type: GET,
                 payload: user
             })
-            // const page = res.data.page;
-          
+
             return res.data.data;
         } catch (error) {
             console.log("error===", error);
-            toast.error(error.message);
         }
     }
-
 }
 
 export const deleteUser = (id) => {
@@ -49,14 +43,10 @@ export const deleteUser = (id) => {
             console.log("delete api==", delete_res.data.message);
 
             if (delete_res.status === 200) {
-
                 toast.success('Delete successfully !')
-
             }
 
-
         } catch (error) {
-            toast.success(error.message);
             console.log("error===", error);
         }
     }
@@ -71,14 +61,11 @@ export const addUser = ({ payload }) => {
                 { headers: { 'Content-Type': 'application/json' } },
             )
             dispatch(fetchUsers());
-
             console.log("insert api==", insert_res);
             console.log("message api==", insert_res.data.message);
             // alert(insert_res.data.message);
-            toast.success(insert_res.data.message);
 
         } catch (error) {
-            toast.error(error.insert_res.data.message);
             console.log(error.insert_res.data.message);
         }
     }
@@ -97,7 +84,7 @@ export const updateItem = (id) => {
             // alert(update_res.data.message);
 
         } catch (error) {
-            toast.error( error.insert_res.data.message);
+            toast.error(error.insert_res.data.message);
             console.log(error);
         }
     }
@@ -111,7 +98,6 @@ export const fetchUsersHoliday = () => {
             const res = await api.get('holiday', config)
             const holiday = res.data.data;
             console.log("Holiday ======", holiday);
-
             dispatch({
                 type: GET_HOLIDAY,
                 payload: holiday
@@ -152,13 +138,9 @@ export const addHoliday = ({ payload }) => {
                 { headers: { 'Content-Type': 'application/json' } },
             )
             dispatch(fetchUsersHoliday());
-
-            console.log("insert api==", insert_res);
             console.log("message api==", insert_res.data.message);
-            toast.success(insert_res.data.message);
 
         } catch (error) {
-            toast.error(error.insert_res.data.message);
             console.log(error.insert_res.data.message);
         }
     }
@@ -170,9 +152,7 @@ export const updateHoliday = (id) => {
             const update_res = await api.put(`holiday/${id._id}`, id, config,
                 { headers: { 'Content-Type': 'application/json' } },
             )
-
             dispatch(fetchUsersHoliday());
-            toast.success(update_res.data.message);
 
         } catch (error) {
             // toast.success( error.insert_res.data.message);
@@ -213,13 +193,12 @@ export const deleteLeave = (id) => {
             dispatch(fetchUsersLeaves());
             // console.log("delete api==", delete_res);
             // toast.success(delete_res.data.message);
-            console.log("status...",delete_res.status);
+            console.log("status...", delete_res.status);
             if (delete_res.status === 200) {
                 toast.success('Delete successfully');
                 // alert('Delete successfully');
             }
-            else
-            {
+            else {
                 toast.success('Data is not  Deleted')
 
             }

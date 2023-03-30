@@ -11,8 +11,6 @@ const space = {
     zIndex: '99 !important'
 
 }
-
-
 function Leaveform() {
     const [leave, setLeave] = useState('Half');
     const [open, setOpen] = useState(true);
@@ -68,7 +66,6 @@ function Leaveform() {
                                 <Typography sx={{ fontSize: "20px", paddingY: '10px' }} >
                                     Type of leave
                                 </Typography>
-
 
                                 <Box sx={{ minWidth: 120 }}>
                                     <FormControl fullWidth>

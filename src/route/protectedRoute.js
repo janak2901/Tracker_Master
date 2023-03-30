@@ -19,13 +19,12 @@ const ProtectedRoute = (props) => {
     )
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;
 
 
 
 
 
-// import React, { useEffect } from 'react'
 // import { useNavigate } from 'react-router-dom';
 
 // function PrivateRoute(props) {

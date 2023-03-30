@@ -2,7 +2,7 @@
 import { CssBaseline } from '@mui/material'
 import { createTheme,useTheme ,ThemeProvider as MuiThemeProvider ,StyledEngineProvider } from '@mui/material/styles'
 import React from 'react'
-
+import BreakPoints from './BreakPoints'
 
 const lightThemeColor={
     primary:"#163339",
@@ -35,6 +35,7 @@ function ThemeProvider(){
 
     const theme = createTheme({
         ...defaultTheme,
+        BreakPoints,
         shape:{borderRadius:10},
         palette:{
             mode:selectedTheme,

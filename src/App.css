@@ -37,3 +37,10 @@
   z-index: 0 !important;
 }
 
+.css-1anqmj6-MuiPopper-root-MuiPickersPopper-root {
+  z-index: 15000 !important;
+}
+/* checkbox user leave form */
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  justify-content: left !important;
+}

@@ -1,15 +1,15 @@
-import { Card, Drawer, Fab, IconButton, Stack, Tooltip, Typography } from '@mui/material'
+import { Card, Drawer, Fab, IconButton, Stack, Tooltip} from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteHoliday, fetchUsersHoliday } from '../redux/action';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { Add } from '@mui/icons-material';
-import Userform from './user/userform';
+import { Add } from '@mui/icons-material'; 
 import Holidayform from './user/holidayform';
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Typography from '../core/Typography';
 
 function Holidayreport() {
 
@@ -110,12 +110,13 @@ function Holidayreport() {
 
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <Stack>
         <Stack direction='row' justifyContent='space-between' alignItems='center' marginX='20px'>
-          <Typography sx={{ marginX: "20px","& .css-p7rans-MuiTypography-root":{color:'gray !important',fontSize:'30px'}}}>
-                        Holidays
-                    </Typography>
+
+          <Typography>
+            Holidays
+          </Typography>
           <Fab style={{ position: "absulate", zIndex: 'auto' }} color='primary' aria-label='add' size='small' onClick={leaveformpage}>
             <Add />
           </Fab>

@@ -16,4 +16,4 @@ function Leavepage() {
   )
 }
 
-export default Leavepage
+export default Leavepage;

@@ -7,14 +7,14 @@ const Button = styled(MuiButton)(()=>({
     fontWeight:600,
     // padding:"8px",
     fontSize:"16px",
-    backgroundColor:"#536DFE",
+    backgroundColor:"#1976d2",
     borderRadius:'25px',
     marginTop:'20px',
 
     "&:hover":{
         backgroundColor:'white',
-        border:"1px solid #536DFE",
-        color:"#536DFE"
+        border:"1px solid #1976d2",
+        color:"#1976d2"
     }
 
 
